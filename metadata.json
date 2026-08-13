@@ -1,0 +1,6 @@
+{
+  "name": "HH Goa 2026 — Frame In Goa",
+  "description": "Turn your photo into a builder badge or PFP frame for HH Goa 2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
