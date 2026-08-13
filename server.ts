@@ -27,7 +27,9 @@ function cleanOldShares() {
 }
 
 const app = express();
-const PORT = 3000;
+app.set("trust proxy", 1);
+
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(express.json({ limit: "25mb" }));
 
@@ -44,7 +46,7 @@ app.post("/api/share", (req, res) => {
     const randomHex = Math.random().toString(36).substring(2, 8);
     const sanitizedName = (name || "builder")
       .toLowerCase()
-      .replace(/[^a-z0-0]/g, "")
+      .replace(/[^a-z0-9]/g, "")
       .substring(0, 12);
     const id = `${sanitizedName ? sanitizedName + "-" : ""}${randomHex}`;
 
